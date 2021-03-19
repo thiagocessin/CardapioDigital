@@ -12,7 +12,7 @@ class ProdutoCardapioViewModel(
     //val produtos = MutableLiveData<ArrayList<ProdutoCardapioEntity>>();
 
     fun onCreate(){
-        contract.goToMainActivity()
+        //contract.goToMainActivity()
     }
 
 

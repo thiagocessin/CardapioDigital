@@ -10,18 +10,25 @@
     android:layout_margin="13dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#ede7f6"
         app:cardCornerRadius="10dp"
-        app:contentPadding="10dp"
-        app:cardBackgroundColor="#ede7f6">
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp">
 
         <TextView
             android:id="@+id/descricaoProduto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Descrição do Produto"/>
+            tools:text="Descrição do Produto" />
+
+        <TextView
+            android:id="@+id/valorProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            tools:text="10.00" />
 
     </androidx.cardview.widget.CardView>
 

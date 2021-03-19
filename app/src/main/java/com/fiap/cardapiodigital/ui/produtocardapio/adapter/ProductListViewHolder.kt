@@ -10,6 +10,7 @@ class ProductListViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
 
     fun bind(produto: ProdutoCardapioEntity) {
         itemView.descricaoProduto.text = produto.descricao
+        itemView.valorProduto.text = produto.valor.toString()
 
     }
 
