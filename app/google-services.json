@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "1089266832163",
-    "firebase_url": "https://fir-example-e16eb.firebaseio.com",
-    "project_id": "fir-example-e16eb",
-    "storage_bucket": "fir-example-e16eb.appspot.com"
+    "project_number": "786536943683",
+    "project_id": "cardapiodigital-6c2f2",
+    "storage_bucket": "cardapiodigital-6c2f2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1089266832163:android:b44c838f16c7298dbd7296",
+        "mobilesdk_app_id": "1:786536943683:android:bf84fb37abe30c85f684f6",
         "android_client_info": {
           "package_name": "com.fiap.cardapiodigital"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1089266832163-jb0s1emhra4qt964i1mpg7n7bofcedkr.apps.googleusercontent.com",
+          "client_id": "786536943683-rsfg8hvo1kmm7m7qsju2edm9vv52b5qg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAfZ--8ink24cYt9coTh5rJEuP9sOydcaw"
+          "current_key": "AIzaSyCD-8G3VXto0VkyQ5FvJM3hVrNoQRv4tXc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1089266832163-jb0s1emhra4qt964i1mpg7n7bofcedkr.apps.googleusercontent.com",
+              "client_id": "786536943683-rsfg8hvo1kmm7m7qsju2edm9vv52b5qg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

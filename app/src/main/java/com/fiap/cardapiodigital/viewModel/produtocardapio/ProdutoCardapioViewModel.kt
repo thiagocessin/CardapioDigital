@@ -11,6 +11,8 @@ class ProdutoCardapioViewModel(
     //val produtosCardapio = getProdutosCardapio.getProdutosCardapio();
     //val produtos = MutableLiveData<ArrayList<ProdutoCardapioEntity>>();
 
+
+
     fun onCreate(){
         //contract.goToMainActivity()
     }

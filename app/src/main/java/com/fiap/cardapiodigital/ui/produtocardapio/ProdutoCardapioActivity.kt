@@ -2,6 +2,7 @@ package com.fiap.cardapiodigital.ui.produtocardapio
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiap.cardapiodigital.R
@@ -10,6 +11,8 @@ import com.fiap.cardapiodigital.domain.entities.ProdutoCardapioEntity
 import com.fiap.cardapiodigital.ui.produtocardapio.adapter.ProductListAdapter
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioContract
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_produto_cardapio.*
 import org.koin.core.parameter.parametersOf
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -33,8 +36,14 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
     }
 
     private fun setupView(){
+
+        Log.i("ProdutoCardapioActivity", "SetUp")
         lista.adapter= adapter
         lista.layoutManager = LinearLayoutManager(this)
+
+        val userName = Firebase.auth.currentUser!!.displayName
+        Log.i("userName", "$userName")
+        nomeUsuario.text = "Bem vindo(a), $userName"
     }
 
     private fun carregaListaViewModel(){

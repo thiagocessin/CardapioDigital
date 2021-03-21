@@ -31,7 +31,7 @@ class LoginViewModel (
     }
 
     fun onSignUpPressed() {
-
+        contract.goToSignUpActivity()
     }
 
 

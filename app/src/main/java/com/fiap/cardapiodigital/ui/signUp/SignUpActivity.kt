@@ -1,32 +1,32 @@
-package com.fiap.cardapiodigital.ui.login
-
+package com.fiap.cardapiodigital.ui.signUp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-
 import com.fiap.cardapiodigital.R
-import com.fiap.cardapiodigital.databinding.ActivityLoginBinding
+import com.fiap.cardapiodigital.databinding.ActivitySignUpBinding
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
-import com.fiap.cardapiodigital.ui.signUp.SignUpActivity
-import com.fiap.cardapiodigital.viewModel.login.LoginContract
-import com.fiap.cardapiodigital.viewModel.login.LoginViewModel
+import com.fiap.cardapiodigital.viewModel.signUp.SignUpContract
+import com.fiap.cardapiodigital.viewModel.signUp.SignUpViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import org.koin.core.parameter.parametersOf
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginActivity : AppCompatActivity(),LoginContract {
+class SignUpActivity : AppCompatActivity(),SignUpContract {
 
-    private lateinit var binding: ActivityLoginBinding
-    private val viewModel : LoginViewModel by viewModel { parametersOf(this)}
+    private lateinit var binding: ActivitySignUpBinding
+    private val viewModel: SignUpViewModel by viewModel { parametersOf(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_login)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
         binding.viewModel = viewModel
-        viewModel.onCreate()
+
+        /*criação da autenticação feita no DATA*/
+        val auth = Firebase.auth
 
     }
 
@@ -36,12 +36,5 @@ class LoginActivity : AppCompatActivity(),LoginContract {
 
     override fun goToMainActivity() {
         startActivity(Intent(this, ProdutoCardapioActivity::class.java))
-        finish()
     }
-
-    override fun goToSignUpActivity() {
-        startActivity(Intent(this, SignUpActivity::class.java))
-    }
-
-
 }
