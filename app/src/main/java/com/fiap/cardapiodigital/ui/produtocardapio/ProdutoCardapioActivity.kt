@@ -43,7 +43,7 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
 
         val userName = Firebase.auth.currentUser!!.displayName
         Log.i("userName", "$userName")
-        nomeUsuario.text = "Bem vindo(a), $userName"
+       // nomeUsuario.text = "Bem vindo(a), $userName"
     }
 
     private fun carregaListaViewModel(){
