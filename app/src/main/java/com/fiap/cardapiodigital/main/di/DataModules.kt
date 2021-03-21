@@ -3,6 +3,7 @@ package com.fiap.cardapiodigital.main.di
 import com.fiap.cardapiodigital.data.login.usecases.CheckUserIsLogged
 import com.fiap.cardapiodigital.data.login.usecases.MakeLogin
 import com.fiap.cardapiodigital.data.produtocardapio.usecases.GetProdutosCardapio
+import com.fiap.cardapiodigital.data.restaurantes.usecases.ListarRestaurantes
 import com.fiap.cardapiodigital.data.signUp.useCases.MakeSignUp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -17,6 +18,8 @@ object DataModules {
         factory { MakeSignUp(Firebase.auth) }
 
         factory {GetProdutosCardapio()}
+
+        factory{ListarRestaurantes()}
 
     }
 

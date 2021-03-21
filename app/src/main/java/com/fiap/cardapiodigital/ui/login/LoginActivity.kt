@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.databinding.ActivityLoginBinding
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
+import com.fiap.cardapiodigital.ui.restaurantes.RestaurantesActivity
 import com.fiap.cardapiodigital.ui.signUp.SignUpActivity
 import com.fiap.cardapiodigital.viewModel.login.LoginContract
 import com.fiap.cardapiodigital.viewModel.login.LoginViewModel
@@ -35,7 +36,7 @@ class LoginActivity : AppCompatActivity(),LoginContract {
     }
 
     override fun goToMainActivity() {
-        startActivity(Intent(this, ProdutoCardapioActivity::class.java))
+        startActivity(Intent(this, RestaurantesActivity::class.java))
         finish()
     }
 
