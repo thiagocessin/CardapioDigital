@@ -42,8 +42,8 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
         lista.layoutManager = LinearLayoutManager(this)
 
         val userName = Firebase.auth.currentUser!!.displayName
-        Log.i("userName", "$userName")
-       // nomeUsuario.text = "Bem vindo(a), $userName"
+        Log.e("userName", "$userName")
+        nomeUsuario?.text = "Olá $userName"
     }
 
     private fun carregaListaViewModel(){
