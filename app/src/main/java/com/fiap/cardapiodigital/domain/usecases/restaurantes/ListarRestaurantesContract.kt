@@ -9,4 +9,5 @@ interface ListarRestaurantesContract {
 
     fun listarRestaurantesPorTipo(tipoRestaurante: TiposRestauranteEnum) : List<RestaurantesModel>;
 
+    fun criarLitaRestaurantes()
 }

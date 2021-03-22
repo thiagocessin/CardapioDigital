@@ -48,6 +48,8 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
         lista.adapter= adapter
         lista.layoutManager = LinearLayoutManager(this)
 
+
+
     }
 
     override fun goToMainActivity() {

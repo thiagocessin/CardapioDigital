@@ -4,11 +4,13 @@ import androidx.lifecycle.ViewModel
 import com.fiap.cardapiodigital.domain.usecases.restaurantes.ListarRestaurantesContract
 
 class RestaurantesViewModel(
-    contract: RestaurantesContract,
-    listarRestaurantesContract: ListarRestaurantesContract): ViewModel() {
+    private val contract: RestaurantesContract,
+    private val listarRestaurantesContract: ListarRestaurantesContract): ViewModel() {
 
 
-    fun onCreate(){}
+    fun onCreate(){
+        listarRestaurantesContract.criarLitaRestaurantes()
+    }
 
 
 }
