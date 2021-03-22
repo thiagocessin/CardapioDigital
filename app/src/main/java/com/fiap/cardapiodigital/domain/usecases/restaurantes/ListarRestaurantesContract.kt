@@ -8,7 +8,7 @@ interface ListarRestaurantesContract {
 
     fun listarTodosRestaurantes(onResult: (ArrayList<RestauranteEntity>) -> Unit);
 
-    fun listarRestaurantesPorTipo(tipoRestaurante: TiposRestauranteEnum) : List<RestauranteEntity>;
+    fun listarTodosRestaurantesPorTipo(onResult: (ArrayList<RestauranteEntity>) -> Unit);
 
     fun criarLitaRestaurantes()
 }

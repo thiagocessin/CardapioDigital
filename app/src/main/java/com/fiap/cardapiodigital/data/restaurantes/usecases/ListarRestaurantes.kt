@@ -35,15 +35,12 @@ class ListarRestaurantes() : ListarRestaurantesContract {
                 onResult(listaRetorno)
             }
 
-
-
-
-
     }
 
-    override fun listarRestaurantesPorTipo(tipoRestaurante: TiposRestauranteEnum): ArrayList<RestauranteEntity> {
+    override fun listarTodosRestaurantesPorTipo(onResult: (ArrayList<RestauranteEntity>) -> Unit) {
         TODO("Not yet implemented")
     }
+
 
     override fun criarLitaRestaurantes() {
 
