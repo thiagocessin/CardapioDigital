@@ -5,23 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.databinding.ActivityRestaurantesBinding
-import com.fiap.cardapiodigital.domain.entities.ProdutoCardapioEntity
-import com.fiap.cardapiodigital.domain.entities.RestauranteEntity
-import com.fiap.cardapiodigital.domain.helpers.TiposRestauranteEnum
+
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
 import com.fiap.cardapiodigital.ui.restaurantes.adapter.RestaurantesListAdapter
 import com.fiap.cardapiodigital.viewModel.restaurantes.RestaurantesContract
 import com.fiap.cardapiodigital.viewModel.restaurantes.RestaurantesViewModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_produto_cardapio.*
+
 import kotlinx.android.synthetic.main.activity_restaurantes.*
 import kotlinx.android.synthetic.main.activity_restaurantes.lista
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+
 
 class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
@@ -58,11 +58,14 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
     }
 
     private fun carregaListaViewModel(){
-        val list : ArrayList<RestauranteEntity> = arrayListOf()
-        list.add(RestauranteEntity("Restaurante Italiano",TiposRestauranteEnum.ITALIANO))
-        list.add(RestauranteEntity("Restaurante Mexicano",TiposRestauranteEnum.MEXICANO))
-        list.add(RestauranteEntity("Restaurante Japonês",TiposRestauranteEnum.JAPONES))
 
-        adapter.list = list
+        Log.e("#activity","chamada listar")
+        viewModel.listarTodosRestaurantes()
+
+        viewModel.restaurantes.observe(this, Observer{
+            Log.e("#activityR",it.toString())
+            adapter.list = it
+            adapter.notifyDataSetChanged()
+        })
     }
 }

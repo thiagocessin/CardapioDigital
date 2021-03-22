@@ -2,6 +2,7 @@ package com.fiap.cardapiodigital.data.restaurantes.usecases
 
 import android.util.Log
 import com.fiap.cardapiodigital.data.restaurantes.model.RestaurantesModel
+import com.fiap.cardapiodigital.domain.entities.RestauranteEntity
 import com.fiap.cardapiodigital.domain.helpers.TiposRestauranteEnum
 import com.fiap.cardapiodigital.domain.usecases.restaurantes.ListarRestaurantesContract
 import com.google.firebase.auth.ktx.auth
@@ -14,11 +15,33 @@ class ListarRestaurantes() : ListarRestaurantesContract {
     val user= Firebase.auth.currentUser!!
 
 
-    override fun listarTodosRestaurantes(): List<RestaurantesModel> {
-        TODO("Not yet implemented")
+    override fun listarTodosRestaurantes(onResult: (ArrayList<RestauranteEntity>) -> Unit) {
+
+        Log.e("#data","chamada listagem")
+        db.collection("restaurantes")
+            .addSnapshotListener(){ value, _ ->
+                val listaRetorno = arrayListOf<RestauranteEntity>()
+                for(document in value!!){
+
+                    val tiposRestauranteEnum = TiposRestauranteEnum.valueOf(document["tipo"].toString())
+                    val restaurante = RestauranteEntity(
+                        document["nome"].toString(),
+                        tiposRestauranteEnum)
+
+                    listaRetorno.add(restaurante)
+                }
+
+                Log.e("#LISTARRESTAURANTES",listaRetorno.toString())
+                onResult(listaRetorno)
+            }
+
+
+
+
+
     }
 
-    override fun listarRestaurantesPorTipo(tipoRestaurante: TiposRestauranteEnum): List<RestaurantesModel> {
+    override fun listarRestaurantesPorTipo(tipoRestaurante: TiposRestauranteEnum): ArrayList<RestauranteEntity> {
         TODO("Not yet implemented")
     }
 
