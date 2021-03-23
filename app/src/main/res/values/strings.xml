@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CardapioDigital</string>
+    <string name="app_name">Cardápio Digital</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>

@@ -4,6 +4,7 @@ enum class TiposRestauranteEnum {
 
     ITALIANO,
     JAPONES,
-    MEXICANO
+    MEXICANO,
+    VARIADO
 
 }

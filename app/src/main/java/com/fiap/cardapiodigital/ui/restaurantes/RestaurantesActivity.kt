@@ -25,19 +25,19 @@ import org.koin.core.parameter.parametersOf
 
 class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
-    var adapter = RestaurantesListAdapter()
+    var adapter = RestaurantesListAdapter(arrayListOf(), {})
     private lateinit var binding: ActivityRestaurantesBinding
     private val viewModel: RestaurantesViewModel by viewModel { parametersOf(this) }
 
-     override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurantes)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_restaurantes)
         binding.viewModel = viewModel
         viewModel.onCreate()
 
-         setupView()
-         carregaListaViewModel()
+        //setupView()
+        carregaListaViewModel()
         val userName = Firebase.auth.currentUser!!.displayName
         Log.e("userName", "$userName")
         nomeUsuario?.text = "Olá $userName"
@@ -45,16 +45,10 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
     private fun setupView(){
         Log.i("RestaurantesActivity", "SetUp")
+
         lista.adapter= adapter
         lista.layoutManager = LinearLayoutManager(this)
 
-
-
-    }
-
-    override fun goToMainActivity() {
-        startActivity(Intent(this, ProdutoCardapioActivity::class.java))
-        finish()
     }
 
     private fun carregaListaViewModel(){
@@ -64,8 +58,26 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
         viewModel.restaurantes.observe(this, Observer{
             Log.e("#activityR",it.toString())
-            adapter.list = it
+            adapter = RestaurantesListAdapter(it) { index->
+                Log.e("#onActivityMM",it.toString())
+                val intent: Intent
+                when(index){
+                    0-> {
+                        intent = Intent(this, ProdutoCardapioActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+
+
+            }
+         //   adapter.list = it
             adapter.notifyDataSetChanged()
+            lista.adapter= adapter
+            lista.layoutManager = LinearLayoutManager(this)
         })
+    }
+
+    override fun goToProdutoCardapioActivity() {
+        TODO("Not yet implemented")
     }
 }

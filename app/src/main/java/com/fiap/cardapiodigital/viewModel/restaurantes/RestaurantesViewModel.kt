@@ -34,5 +34,11 @@ class RestaurantesViewModel(
         listarRestaurantesContract.criarLitaRestaurantes()
     }
 
+    fun onClickRestaurante(){
+        Log.e("RESTA", "CLICK REST")
+        contract.goToProdutoCardapioActivity()
+
+    }
+
 
 }
