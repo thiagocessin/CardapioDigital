@@ -34,39 +34,33 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
         setContentView(R.layout.activity_restaurantes)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_restaurantes)
         binding.viewModel = viewModel
+
         viewModel.onCreate()
 
-        //setupView()
         carregaListaViewModel()
         val userName = Firebase.auth.currentUser!!.displayName
         Log.e("userName", "$userName")
-        nomeUsuario?.text = "Olá $userName"
-    }
-
-    private fun setupView(){
-        Log.i("RestaurantesActivity", "SetUp")
-
-        lista.adapter= adapter
-        lista.layoutManager = LinearLayoutManager(this)
-
+        nomeUsuario?.text = "Bem vindo(a) $userName"
     }
 
     private fun carregaListaViewModel(){
 
-        Log.e("#activity","chamada listar")
-        viewModel.listarTodosRestaurantes()
-
         viewModel.restaurantes.observe(this, Observer{
-            Log.e("#activityR",it.toString())
-            adapter = RestaurantesListAdapter(it) { index->
-                Log.e("#onActivityMM",it.toString())
-                val intent: Intent
-                when(index){
-                    0-> {
-                        intent = Intent(this, ProdutoCardapioActivity::class.java)
+
+            adapter = RestaurantesListAdapter(it) { item->
+
+              //  val intent: Intent
+              //  when(index){
+                   // 0-> {
+
+                        val intent = Intent(this, ProdutoCardapioActivity::class.java)
+                        val b :Bundle = Bundle()
+                        b.putString("tipoRestaurante",item.tipo.toString())
+                        intent.putExtras(b)
                         startActivity(intent)
-                    }
-                }
+
+                   // }
+                //}
 
 
             }

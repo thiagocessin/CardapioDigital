@@ -10,7 +10,7 @@ import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
 
 
 class RestaurantesListAdapter(val list: ArrayList<RestauranteEntity>,
-    private val onItemTap: (index: Int) -> Unit) : RecyclerView.Adapter<RestaurantesListViewHolder>(){
+    private val onItemTap: (item: RestauranteEntity) -> Unit) : RecyclerView.Adapter<RestaurantesListViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantesListViewHolder {
         val view = LayoutInflater.from(parent.context)

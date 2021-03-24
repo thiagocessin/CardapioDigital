@@ -17,7 +17,6 @@ class ListarRestaurantes() : ListarRestaurantesContract {
 
     override fun listarTodosRestaurantes(onResult: (ArrayList<RestauranteEntity>) -> Unit) {
 
-        Log.e("#data","chamada listagem")
         db.collection("restaurantes")
             .addSnapshotListener(){ value, _ ->
                 val listaRetorno = arrayListOf<RestauranteEntity>()

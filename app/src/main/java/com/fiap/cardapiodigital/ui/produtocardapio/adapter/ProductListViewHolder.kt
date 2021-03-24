@@ -9,8 +9,9 @@ import kotlinx.android.synthetic.main.item_produto_list.view.*
 class ProductListViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(produto: ProdutoCardapioEntity) {
-        itemView.descricaoProduto.text = produto.descricao
+        itemView.nomeProduto.text = produto.nome
         itemView.valorProduto.text = produto.valor.toString()
+        itemView.detalheProduto.text = produto.descricao
 
     }
 

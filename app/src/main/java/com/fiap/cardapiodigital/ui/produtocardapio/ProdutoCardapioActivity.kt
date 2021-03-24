@@ -4,52 +4,54 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.databinding.ActivityProdutoCardapioBinding
 import com.fiap.cardapiodigital.domain.entities.ProdutoCardapioEntity
+import com.fiap.cardapiodigital.domain.helpers.TiposRestauranteEnum
 import com.fiap.cardapiodigital.ui.produtocardapio.adapter.ProductListAdapter
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioContract
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioViewModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_produto_cardapio.*
+import kotlinx.android.synthetic.main.activity_produto_cardapio.lista
+import kotlinx.android.synthetic.main.activity_restaurantes.*
 import org.koin.core.parameter.parametersOf
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
 
-    val adapter = ProductListAdapter()
+    var adapter = ProductListAdapter(arrayListOf())
 
     private lateinit var binding: ActivityProdutoCardapioBinding
     private val viewModel: ProdutoCardapioViewModel by viewModel { parametersOf(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_produto_cardapio)
         binding.viewModel = viewModel
 
-        viewModel.onCreate()
-        setupView()
+        val tipoRestaurante= TiposRestauranteEnum.valueOf(intent.extras?.get("tipoRestaurante").toString())
+        viewModel.listarProdutosCardapioPorTipo(tipoRestaurante)
         carregaListaViewModel()
     }
 
-    private fun setupView(){
-
-        Log.i("ProdutoCardapioActivity", "SetUp")
-        lista.adapter= adapter
-        lista.layoutManager = LinearLayoutManager(this)
-
-    }
-
     private fun carregaListaViewModel(){
-         val list : ArrayList<ProdutoCardapioEntity> = arrayListOf()
-         list.add(ProdutoCardapioEntity("",10.00,"Lasanha a bolonhesa"))
-         list.add(ProdutoCardapioEntity("",20.00,"Spaguetti quatro queijos"))
-         list.add(ProdutoCardapioEntity("",50.00,"Nhoque ao sugo"))
-         list.add(ProdutoCardapioEntity("",100.00,"Lagosta cozida"))
-         adapter.list = list
+
+        viewModel.produtos.observe(this, Observer {
+            adapter = ProductListAdapter(it)
+
+            adapter.notifyDataSetChanged()
+            lista.adapter= adapter
+            lista.layoutManager = LinearLayoutManager(this)
+        })
+
+
+
     }
 
     override fun goToMainActivity() {

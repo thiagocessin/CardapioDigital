@@ -15,5 +15,7 @@
     <string name="action_sign_up">Não possui cadastro? Clique aqui</string>
     <string name="action_sign_up_confirm">Cadastrar</string>
 
+    <string name="label_restaurantes">Restaurantes</string>
+
 
 </resources>

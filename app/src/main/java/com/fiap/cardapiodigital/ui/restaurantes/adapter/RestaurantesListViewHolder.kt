@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
 class RestaurantesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
-    fun bind(restaurante: RestauranteEntity, onItemTap: (index: Int) -> Unit) {
+    fun bind(restaurante: RestauranteEntity, onItemTap: (item: RestauranteEntity) -> Unit) {
         itemView.descricaoRestaurante.text= restaurante.nome
 
         val descricaoTipoRestaurante = when(TiposRestauranteEnum.valueOf(restaurante.tipo.name)){
@@ -31,7 +31,7 @@ class RestaurantesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
 
         itemView.setOnClickListener{
             Log.e("#RestaurantesListVH","setOnClickListener")
-            onItemTap(0)
+            onItemTap(restaurante)
         }
 
     }

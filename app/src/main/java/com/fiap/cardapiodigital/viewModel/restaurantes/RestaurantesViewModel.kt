@@ -15,18 +15,13 @@ class RestaurantesViewModel(
 
     val restaurantes = MutableLiveData<ArrayList<RestauranteEntity>>()
 
-
     fun onCreate(){
-
-
+        listarTodosRestaurantes()
     }
 
     fun listarTodosRestaurantes() {
-        Log.e("#viewModel","chamada listar")
         listarRestaurantesContract.listarTodosRestaurantes(){restaurantes->
-
-            Log.e("#viewModel","retorno listar")
-            this.restaurantes.postValue(restaurantes)
+          this.restaurantes.postValue(restaurantes)
         }
     }
 

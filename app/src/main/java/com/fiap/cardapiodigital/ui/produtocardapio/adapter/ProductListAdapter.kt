@@ -5,12 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.fiap.cardapiodigital.domain.entities.ProdutoCardapioEntity
 import com.fiap.cardapiodigital.R
+import com.fiap.cardapiodigital.domain.entities.RestauranteEntity
 
-class ProductListAdapter : RecyclerView.Adapter<ProductListViewHolder>() {
+class ProductListAdapter(val list: ArrayList<ProdutoCardapioEntity>) : RecyclerView.Adapter<ProductListViewHolder>() {
 
-    var list: ArrayList<ProdutoCardapioEntity> = arrayListOf();
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
+     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_produto_list,parent, false)
         return ProductListViewHolder(view)
