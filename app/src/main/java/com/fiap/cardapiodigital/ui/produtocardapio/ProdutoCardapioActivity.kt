@@ -3,6 +3,7 @@ package com.fiap.cardapiodigital.ui.produtocardapio
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,14 +46,17 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
         viewModel.produtos.observe(this, Observer {
             adapter = ProductListAdapter(it)
 
-            adapter.notifyDataSetChanged()
-            lista.adapter= adapter
-            lista.layoutManager = LinearLayoutManager(this)
+                adapter.notifyDataSetChanged()
+                lista.adapter = adapter
+                lista.layoutManager = LinearLayoutManager(this)
+
         })
 
 
 
     }
+
+
 
     override fun goToMainActivity() {
         TODO("Not yet implemented")

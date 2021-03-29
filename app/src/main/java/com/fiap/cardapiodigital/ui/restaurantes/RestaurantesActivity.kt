@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -73,5 +74,9 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
     override fun goToProdutoCardapioActivity() {
         TODO("Not yet implemented")
+    }
+
+    fun onFinalizarPedidoPressed(){
+        Toast.makeText(this, "Pedido finalizado com Sucesso", Toast.LENGTH_SHORT).show()
     }
 }
