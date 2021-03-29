@@ -11,6 +11,7 @@ import com.fiap.cardapiodigital.domain.helpers.TiposRestauranteEnum
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
 import kotlinx.android.synthetic.main.item_restaurante.view.*
 import kotlinx.coroutines.withContext
+import com.fiap.cardapiodigital.R
 
 
 class RestaurantesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -19,13 +20,32 @@ class RestaurantesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
     fun bind(restaurante: RestauranteEntity, onItemTap: (item: RestauranteEntity) -> Unit) {
         itemView.descricaoRestaurante.text= restaurante.nome
 
-        val descricaoTipoRestaurante = when(TiposRestauranteEnum.valueOf(restaurante.tipo.name)){
-            TiposRestauranteEnum.MEXICANO -> "Restaurante Mexicano"
-            TiposRestauranteEnum.ITALIANO -> "Restaurante Italiano"
-            TiposRestauranteEnum.JAPONES -> "Restaurante Japonês"
-            TiposRestauranteEnum.VARIADO -> "Comidas típicas variadas"
-            else -> "Tipo do Restaurante desconhecido"
+        var descricaoTipoRestaurante ="";
+
+
+        when(TiposRestauranteEnum.valueOf(restaurante.tipo.name)){
+            TiposRestauranteEnum.MEXICANO ->{
+                descricaoTipoRestaurante = "Restaurante Mexicano"
+                itemView.imagemRestaurante.setImageResource(R.drawable.img_rest_mexicano);
+            }
+            TiposRestauranteEnum.ITALIANO -> {
+                descricaoTipoRestaurante = "Restaurante Italiano"
+                itemView.imagemRestaurante.setImageResource(R.drawable.img_rest_italiano);
+            }
+            TiposRestauranteEnum.JAPONES -> {
+                descricaoTipoRestaurante = "Restaurante Japonês"
+                itemView.imagemRestaurante.setImageResource(R.drawable.img_rest_japones);
+            }
+            TiposRestauranteEnum.VARIADO -> {
+                descricaoTipoRestaurante = "Comidas Típicas Variadas"
+                itemView.imagemRestaurante.setImageResource(R.drawable.img_rest_variado);
+            }
+            else -> {
+                descricaoTipoRestaurante = "Tipo do Restaurante desconhecido"
+                itemView.imagemRestaurante.setImageResource(R.drawable.img_restaurante);
+            }
         }
+
 
         itemView.tipoRestaurante.text = descricaoTipoRestaurante
 
