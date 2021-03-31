@@ -41,7 +41,7 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
         carregaListaViewModel()
         val userName = Firebase.auth.currentUser!!.displayName
         Log.e("userName", "$userName")
-        nomeUsuario?.text = "Bem vindo(a) $userName"
+        //nomeUsuario?.text = "Bem vindo(a) $userName"
     }
 
     private fun carregaListaViewModel(){

@@ -13,6 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--TOP bar layout-->
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Restaurantes"
+                app:menu="@menu/top_app_bar"
+                app:navigationIcon="@drawable/baseline_menu_24"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -23,59 +48,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/nomeUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bem vindo(a) Thiago"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textoBoasVindas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_restaurantes"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <com.google.android.material.bottomappbar.BottomAppBar
-                android:id="@+id/bar"
+                android:id="@+id/bottomAppBar"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_gravity="bottom"
-                android:backgroundTint="@color/colorPrimaryDark">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                </LinearLayout>
-
-            </com.google.android.material.bottomappbar.BottomAppBar>
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Finalizar Pedido"
-                app:layout_anchor="@+id/bar"
-                app:layout_anchorGravity="center"/>
+                android:layout_gravity="bottom"
+                style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+                app:navigationIcon="@drawable/baseline_menu_24"
+                app:menu="@menu/botton_app_bar"/>
+
 
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
