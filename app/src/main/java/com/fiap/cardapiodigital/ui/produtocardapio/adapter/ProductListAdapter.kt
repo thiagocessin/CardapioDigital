@@ -7,7 +7,8 @@ import com.fiap.cardapiodigital.domain.entities.ProdutoCardapioEntity
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.domain.entities.RestauranteEntity
 
-class ProductListAdapter(val list: ArrayList<ProdutoCardapioEntity>) : RecyclerView.Adapter<ProductListViewHolder>() {
+class ProductListAdapter(val list: ArrayList<ProdutoCardapioEntity>,
+                         private val onItemTap: (item: ProdutoCardapioEntity) -> Unit) : RecyclerView.Adapter<ProductListViewHolder>() {
 
      override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -21,7 +22,7 @@ class ProductListAdapter(val list: ArrayList<ProdutoCardapioEntity>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: ProductListViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position],onItemTap)
     }
 
 

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.fiap.cardapiodigital.viewModel.restaurantes.RestaurantesViewModel" />
+            type="com.fiap.cardapiodigital.viewModel.pedidos.PedidosViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,33 +15,32 @@
 
         <!--TOP bar layout-->
         <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.appbar.AppBarLayout>
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="Restaurantes"
                 app:menu="@menu/top_app_bar"
                 app:navigationIcon="@drawable/baseline_menu_24"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                />
-
-        </com.google.android.material.appbar.AppBarLayout>
+                app:title="Detalhes do Pedido" />
 
 
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lista"
+            android:id="@+id/listaPedidos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="50dp"
@@ -65,6 +64,9 @@
 
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

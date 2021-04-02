@@ -2,6 +2,8 @@ package com.fiap.cardapiodigital.main.di
 
 import com.fiap.cardapiodigital.data.login.usecases.CheckUserIsLogged
 import com.fiap.cardapiodigital.data.login.usecases.MakeLogin
+import com.fiap.cardapiodigital.data.pedidos.usecases.CriarPedido
+import com.fiap.cardapiodigital.data.pedidos.usecases.ListarPedidos
 import com.fiap.cardapiodigital.data.produtocardapio.usecases.GetProdutosCardapio
 import com.fiap.cardapiodigital.data.restaurantes.usecases.ListarRestaurantes
 import com.fiap.cardapiodigital.data.signUp.useCases.MakeSignUp
@@ -20,6 +22,10 @@ object DataModules {
         factory {GetProdutosCardapio()}
 
         factory{ListarRestaurantes()}
+
+        factory { ListarPedidos() }
+
+        factory { CriarPedido() }
 
     }
 

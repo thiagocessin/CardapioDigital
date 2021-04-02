@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.databinding.ActivityRestaurantesBinding
+import com.fiap.cardapiodigital.ui.pedidos.PedidosActivity
 
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
 import com.fiap.cardapiodigital.ui.restaurantes.adapter.RestaurantesListAdapter
@@ -27,6 +28,8 @@ import org.koin.core.parameter.parametersOf
 class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
     var adapter = RestaurantesListAdapter(arrayListOf(), {})
+
+
     private lateinit var binding: ActivityRestaurantesBinding
     private val viewModel: RestaurantesViewModel by viewModel { parametersOf(this) }
 
@@ -35,6 +38,17 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
         setContentView(R.layout.activity_restaurantes)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_restaurantes)
         binding.viewModel = viewModel
+
+        menuInferior.setOnMenuItemClickListener{menuItem->
+            Log.e("TAGCLICK","Click menu "+menuItem.toString())
+
+            when(menuItem.toString()){
+                "Pedidos"->goToPedidosActivity()
+            }
+
+            true
+
+        }
 
         viewModel.onCreate()
 
@@ -72,8 +86,9 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
         })
     }
 
-    override fun goToProdutoCardapioActivity() {
-        TODO("Not yet implemented")
+    override fun goToPedidosActivity() {
+        val intent = Intent(this, PedidosActivity::class.java)
+        startActivity(intent)
     }
 
     fun onFinalizarPedidoPressed(){

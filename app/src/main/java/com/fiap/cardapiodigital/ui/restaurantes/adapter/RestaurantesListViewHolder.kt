@@ -12,6 +12,9 @@ import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
 import kotlinx.android.synthetic.main.item_restaurante.view.*
 import kotlinx.coroutines.withContext
 import com.fiap.cardapiodigital.R
+import kotlinx.android.synthetic.main.activity_restaurantes.view.*
+import java.text.DecimalFormat
+import java.util.logging.Logger
 
 
 class RestaurantesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -45,6 +48,7 @@ class RestaurantesListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemV
                 itemView.imagemRestaurante.setImageResource(R.drawable.img_restaurante);
             }
         }
+
 
 
         itemView.tipoRestaurante.text = descricaoTipoRestaurante

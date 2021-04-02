@@ -25,7 +25,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
 
-    var adapter = ProductListAdapter(arrayListOf())
+    var adapter = ProductListAdapter(arrayListOf(),{})
+    var listaProdutos = arrayListOf<ProdutoCardapioEntity>()
 
     private lateinit var binding: ActivityProdutoCardapioBinding
     private val viewModel: ProdutoCardapioViewModel by viewModel { parametersOf(this) }
@@ -44,7 +45,12 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
     private fun carregaListaViewModel(){
 
         viewModel.produtos.observe(this, Observer {
-            adapter = ProductListAdapter(it)
+            adapter = ProductListAdapter(it){item ->
+
+                viewModel.listaProdutosSelecionados.add(item)
+                Toast.makeText(this, "Item adicionado ao pedido", Toast.LENGTH_SHORT).show()
+
+            }
 
                 adapter.notifyDataSetChanged()
                 lista.adapter = adapter

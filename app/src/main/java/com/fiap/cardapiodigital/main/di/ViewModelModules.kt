@@ -2,12 +2,16 @@ package com.fiap.cardapiodigital.main.di
 
 import com.fiap.cardapiodigital.data.login.usecases.CheckUserIsLogged
 import com.fiap.cardapiodigital.data.login.usecases.MakeLogin
+import com.fiap.cardapiodigital.data.pedidos.usecases.CriarPedido
+import com.fiap.cardapiodigital.data.pedidos.usecases.ListarPedidos
 import com.fiap.cardapiodigital.data.produtocardapio.usecases.GetProdutosCardapio
 import com.fiap.cardapiodigital.data.restaurantes.usecases.ListarRestaurantes
 import com.fiap.cardapiodigital.data.signUp.useCases.MakeSignUp
 import com.fiap.cardapiodigital.domain.usecases.signUp.MakeSignUpContract
 import com.fiap.cardapiodigital.viewModel.login.LoginContract
 import com.fiap.cardapiodigital.viewModel.login.LoginViewModel
+import com.fiap.cardapiodigital.viewModel.pedidos.PedidosContract
+import com.fiap.cardapiodigital.viewModel.pedidos.PedidosViewModel
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioContract
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioViewModel
 import com.fiap.cardapiodigital.viewModel.restaurantes.RestaurantesContract
@@ -25,7 +29,7 @@ object ViewModelModules {
             LoginViewModel(contract, get<CheckUserIsLogged>(), get<MakeLogin>()) }
 
         viewModel { (contract: ProdutoCardapioContract) ->
-            ProdutoCardapioViewModel(contract, get<GetProdutosCardapio>()) }
+            ProdutoCardapioViewModel(contract, get<GetProdutosCardapio>(),get<CriarPedido>()) }
 
         viewModel { (contract: SignUpContract) ->
             SignUpViewModel(contract, get<MakeSignUp>())
@@ -35,6 +39,13 @@ object ViewModelModules {
             RestaurantesViewModel(contract, get<ListarRestaurantes>())
 
         }
+
+        viewModel{(contract: PedidosContract) ->
+            PedidosViewModel(contract, get<ListarPedidos>(),get<CriarPedido>())
+
+        }
+
+
     }
 
 }

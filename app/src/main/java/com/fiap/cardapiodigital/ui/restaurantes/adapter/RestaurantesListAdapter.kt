@@ -24,7 +24,7 @@ class RestaurantesListAdapter(val list: ArrayList<RestauranteEntity>,
     }
 
     override fun onBindViewHolder(holder: RestaurantesListViewHolder, position: Int) {
-        Log.e("#onBindViewHolder","onBindVH")
+
         holder.bind(list[position],onItemTap)
     }
 

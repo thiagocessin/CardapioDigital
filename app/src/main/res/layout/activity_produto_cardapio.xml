@@ -80,6 +80,17 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="211dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="350dp"
+        android:onClick="@{_ -> viewModel.onFinalizarPedidoClick()}"
+        android:text="Pedir"
+        app:layout_constraintEnd_toStartOf="@+id/coordinatorLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
