@@ -26,7 +26,7 @@ class CriarPedido() : CriarPedidoContract{
     ) {
 
        val randomPedidoNumero = (0..100000).random()
-      
+
         val docData = hashMapOf(
             "descricao" to pedido.descricaoPedido,
             "numero" to  randomPedidoNumero,
