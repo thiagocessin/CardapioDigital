@@ -37,6 +37,8 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
         binding = DataBindingUtil.setContentView(this,R.layout.activity_produto_cardapio)
         binding.viewModel = viewModel
 
+        viewModel.listaProdutosSelecionados = arrayListOf()
+
         val tipoRestaurante= TiposRestauranteEnum.valueOf(intent.extras?.get("tipoRestaurante").toString())
         viewModel.listarProdutosCardapioPorTipo(tipoRestaurante)
         carregaListaViewModel()
@@ -46,10 +48,8 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
 
         viewModel.produtos.observe(this, Observer {
             adapter = ProductListAdapter(it){item ->
-
                 viewModel.listaProdutosSelecionados.add(item)
                 Toast.makeText(this, "Item adicionado ao pedido", Toast.LENGTH_SHORT).show()
-
             }
 
                 adapter.notifyDataSetChanged()

@@ -11,26 +11,32 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="#ede7f6"
-        app:cardCornerRadius="10dp"
-        app:cardUseCompatPadding="true"
-        app:contentPadding="20dp">
+        app:cardUseCompatPadding="true">
 
-        <TextView
-            android:id="@+id/nomeProduto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:text="Nome do Produto" />
+        <ImageView
+            android:id="@+id/imagemRestaurante"
+            android:layout_width="63dp"
+            android:layout_height="59dp"
+            android:src="@drawable/img_restaurante"
+            android:layout_gravity="right"/>
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/nomeProduto"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Nome do Produto" />
 
-        <TextView
-            android:id="@+id/valorProduto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            tools:text="10.00" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="345dp"
@@ -43,7 +49,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:paddingBottom="5dp"
                 tools:text="Detalhes produto" />
+
+            <TextView
+                android:id="@+id/valorProduto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                tools:text="R$ 10.00" />
 
         </LinearLayout>
 

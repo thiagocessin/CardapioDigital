@@ -11,7 +11,7 @@ class ProductListViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
 
     fun bind(produto: ProdutoCardapioEntity,onItemTap: (item: ProdutoCardapioEntity) -> Unit) {
         itemView.nomeProduto.text = produto.nome
-        itemView.valorProduto.text = produto.valor.toString()
+        itemView.valorProduto.text = "R$ "+ produto.valor.toString()
         itemView.detalheProduto.text = produto.descricao
 
 

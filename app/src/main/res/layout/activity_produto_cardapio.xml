@@ -51,46 +51,51 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="129dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            app:navigationIcon="@drawable/baseline_menu_24"
-            app:menu="@menu/botton_app_bar"/>
+            app:menu="@menu/botton_app_bar"
+            app:navigationIcon="@drawable/baseline_menu_24" >
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{_ -> viewModel.onFinalizarPedidoClick()}"
+                android:text="Finalizar Pedido"
+                android:textAlignment="center"
+                android:gravity="center"/>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="211dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="350dp"
-        android:onClick="@{_ -> viewModel.onFinalizarPedidoClick()}"
-        android:text="Pedir"
-        app:layout_constraintEnd_toStartOf="@+id/coordinatorLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
