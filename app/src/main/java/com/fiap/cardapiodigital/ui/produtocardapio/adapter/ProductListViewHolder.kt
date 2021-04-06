@@ -13,11 +13,35 @@ class ProductListViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
         itemView.nomeProduto.text = produto.nome
         itemView.valorProduto.text = "R$ "+ produto.valor.toString()
         itemView.detalheProduto.text = produto.descricao
+        itemView.quantidadeTexto.text = "Quantidade: "
 
 
+        itemView.addButton.setOnClickListener{
+            onItemTap(produto)
+
+            if(itemView.quantidade.text.toString().isNullOrEmpty()){
+                itemView.quantidade.text = "0";
+            }
+            val cont = itemView.quantidade.text.toString().toInt()
+            itemView.quantidade.text = (cont+1).toString()
+        }
+
+        itemView.removeButton.setOnClickListener{
+            onItemTap(produto)
+            if(itemView.quantidade.text.toString().isNullOrEmpty()){
+                itemView.quantidade.text = "0";
+            }
+                val cont = itemView.quantidade.text.toString().toInt()
+
+                if(cont > 0) {
+                    itemView.quantidade.text = (cont - 1).toString()
+                }
+
+        }
+        /*
         itemView.setOnClickListener{
             onItemTap(produto)
-        }
+        }*/
     }
 
 

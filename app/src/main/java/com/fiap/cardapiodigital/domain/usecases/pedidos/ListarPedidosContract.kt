@@ -2,6 +2,7 @@ package com.fiap.cardapiodigital.domain.usecases.pedidos
 
 import com.fiap.cardapiodigital.domain.entities.PedidoEntity
 import com.fiap.cardapiodigital.domain.entities.RestauranteEntity
+import com.google.firebase.auth.FirebaseUser
 
 interface ListarPedidosContract {
 

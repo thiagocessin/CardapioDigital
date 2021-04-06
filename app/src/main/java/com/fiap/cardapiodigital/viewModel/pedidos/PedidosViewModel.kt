@@ -16,7 +16,7 @@ class PedidosViewModel(
     val pedidos = MutableLiveData<ArrayList<PedidoEntity>>()
 
     fun onCreate(){
-        listarPedidosContract.listarTodosPedidos(){pedidos->
+        listarPedidosContract.listarPedidosPorCliente (){pedidos->
             this.pedidos.postValue(pedidos)
         }
     }

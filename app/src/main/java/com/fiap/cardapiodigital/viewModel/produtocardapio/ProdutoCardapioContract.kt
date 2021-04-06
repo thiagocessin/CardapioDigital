@@ -4,4 +4,6 @@ package com.fiap.cardapiodigital.viewModel.produtocardapio
 interface ProdutoCardapioContract {
 
     fun goToMainActivity()
+
+    fun onSuccesCriarPedido()
 }

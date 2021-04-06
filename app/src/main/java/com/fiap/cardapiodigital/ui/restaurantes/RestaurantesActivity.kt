@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.databinding.ActivityRestaurantesBinding
+import com.fiap.cardapiodigital.ui.pedidos.ConfirmacaoPedidoActivity
 import com.fiap.cardapiodigital.ui.pedidos.PedidosActivity
 
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
@@ -93,5 +94,7 @@ class RestaurantesActivity : AppCompatActivity(), RestaurantesContract {
 
     fun onFinalizarPedidoPressed(){
         Toast.makeText(this, "Pedido finalizado com Sucesso", Toast.LENGTH_SHORT).show()
+
+
     }
 }

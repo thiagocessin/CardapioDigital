@@ -31,7 +31,11 @@ class CriarPedido() : CriarPedidoContract{
             "descricao" to pedido.descricaoPedido,
             "numero" to  randomPedidoNumero,
             "valor" to calculaValorTotalPedido(pedido),
-            "listaProdutos" to pedido.listaProdutos
+            "listaProdutos" to pedido.listaProdutos,
+            "usuario" to user.uid,
+            "statusPedido" to pedido.statusPedido,
+            "tempoEstimado" to pedido.tempoEstimado,
+            "valorFrete" to pedido.valorFrete
         )
 
 

@@ -6,24 +6,48 @@
     android:id="@+id/itemMessageContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="13dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:cardBackgroundColor="#ede7f6"
         app:cardUseCompatPadding="true">
 
-        <ImageView
-            android:id="@+id/imagemRestaurante"
-            android:layout_width="63dp"
-            android:layout_height="59dp"
-            android:src="@drawable/img_restaurante"
-            android:layout_gravity="right"/>
         <LinearLayout
-            android:layout_width="345dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right">
+
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/removeButton"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="10dp"
+                android:contentDescription="Description"
+                app:srcCompat="@drawable/ic_remove_circle_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addButton"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="10dp"
+                android:contentDescription="Description"
+                app:srcCompat="@drawable/ic_plus_24" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/nomeProduto"
@@ -39,8 +63,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="345dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="30dp">
 
@@ -60,6 +84,31 @@
                 android:layout_gravity="left"
                 android:layout_marginLeft="10dp"
                 tools:text="R$ 10.00" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/quantidadeTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="0dp"
+                tools:text="Quantidade: " />
+
+        <TextView
+                android:id="@+id/quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="0dp"
+                android:textSize="16sp"
+                tools:text="0" />
+        </LinearLayout>
 
         </LinearLayout>
 
