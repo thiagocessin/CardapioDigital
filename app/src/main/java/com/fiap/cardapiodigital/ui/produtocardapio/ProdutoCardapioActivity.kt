@@ -13,6 +13,7 @@ import com.fiap.cardapiodigital.databinding.ActivityProdutoCardapioBinding
 import com.fiap.cardapiodigital.domain.entities.ProdutoCardapioEntity
 import com.fiap.cardapiodigital.domain.helpers.TiposRestauranteEnum
 import com.fiap.cardapiodigital.ui.pedidos.ConfirmacaoPedidoActivity
+import com.fiap.cardapiodigital.ui.pedidos.PedidosActivity
 import com.fiap.cardapiodigital.ui.produtocardapio.adapter.ProductListAdapter
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioContract
 import com.fiap.cardapiodigital.viewModel.produtocardapio.ProdutoCardapioViewModel
@@ -40,6 +41,16 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
         binding = DataBindingUtil.setContentView(this,R.layout.activity_produto_cardapio)
         binding.viewModel = viewModel
 
+        bottomAppBar.setOnMenuItemClickListener{menuItem->
+            Log.e("TAGCLICK","Click menu "+menuItem.toString())
+
+            when(menuItem.toString()){
+                "Pedidos"->goToPedidosActivity()
+            }
+
+            true
+
+        }
 
         viewModel.listaProdutosSelecionados = arrayListOf()
 
@@ -75,5 +86,10 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
         val intent = Intent(this, ConfirmacaoPedidoActivity::class.java)
         startActivity(intent)
 
+    }
+
+    private fun goToPedidosActivity() {
+        val intent = Intent(this, PedidosActivity::class.java)
+        startActivity(intent)
     }
 }
