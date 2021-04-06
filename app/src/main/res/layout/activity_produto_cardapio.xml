@@ -36,7 +36,7 @@
                     android:src="@drawable/italian_food"
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
-                    android:contentDescription="Menu"
+                    android:contentDescription="@string/menu"
                     />
 
                 <com.google.android.material.appbar.MaterialToolbar
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{_ -> viewModel.onFinalizarPedidoClick()}"
-                android:text="Finalizar Pedido"
+                android:text="@string/pedidos_finalizar"
                 android:textAlignment="center"
                 android:gravity="center"/>
 

@@ -32,7 +32,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:menu="@menu/top_app_bar"
                 app:navigationIcon="@drawable/baseline_menu_24"
-                app:title="Detalhes do Pedido" />
+                app:title="@string/pedidos_detalhes" />
 
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>

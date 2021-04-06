@@ -26,7 +26,7 @@
                     android:id="@+id/topAppBar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:title="Restaurantes"
+                    app:title="@string/restaurantes"
                     app:menu="@menu/top_app_bar"
                     app:navigationIcon="@drawable/baseline_menu_24"
                     style="@style/Widget.MaterialComponents.Toolbar.Primary"

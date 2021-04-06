@@ -4,20 +4,20 @@
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/ic_favorite_24dp"
-        android:title="Favorite"
+        android:title="@string/favorite"
         android:contentDescription="Description Favorite"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/search"
         android:icon="@drawable/baseline_search_24"
-        android:title="Search"
+        android:title="@string/search"
         android:contentDescription="Description Search"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/more"
-        android:title="Configurações"
+        android:title="@string/configuracoes"
         android:contentDescription="More"
         app:showAsAction="never" />
 

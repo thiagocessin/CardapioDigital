@@ -35,7 +35,7 @@
                 android:layout_marginLeft="70dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                tools:text="Jamie's Italian" />
+                tools:text="@string/nome_restaurante" />
 
             <TextView
                 android:id="@+id/tipoRestaurante"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_gravity="left"
-                tools:text="Restaurante Italiano" />
+                tools:text="@string/tipo_restaurante" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

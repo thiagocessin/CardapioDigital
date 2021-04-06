@@ -4,7 +4,7 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/baseline_house_24"
-        android:title="Home"
+        android:title="@string/home"
         android:contentDescription="Home"
         app:showAsAction="ifRoom"
         />
@@ -12,7 +12,7 @@
     <item
         android:id="@+id/pedidos"
         android:icon="@drawable/baseline_list_alt_24"
-        android:title="Pedidos"
+        android:title="@string/pedidos"
         android:contentDescription="Pedidos"
         app:showAsAction="ifRoom"
 
@@ -22,7 +22,7 @@
     <item
         android:id="@+id/pedido"
         android:icon="@drawable/baseline_list_alt_24"
-        android:title="Home"
+        android:title="@string/home"
         android:contentDescription="Home"
         app:showAsAction="ifRoom"
         />
@@ -30,7 +30,7 @@
     <item
         android:id="@+id/Profile"
         android:icon="@drawable/baseline_perm_identity_24"
-        android:title="Profile"
+        android:title="@string/profile"
         android:contentDescription="Profile"
         app:showAsAction="ifRoom"
         />
@@ -39,8 +39,8 @@
     <item
         android:id="@+id/Menu"
         android:icon="@drawable/baseline_menu_24"
-        android:title="Menu"
-        android:contentDescription="Menu"
+        android:title="@string/menu"
+        android:contentDescription="@string/menu"
         app:showAsAction="ifRoom"
         />
 

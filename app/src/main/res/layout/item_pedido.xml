@@ -33,7 +33,6 @@
                 android:layout_marginLeft="70dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                tools:text="Nº Pedido: 123"
                 android:paddingBottom="10dp"/>
 
             <TextView
@@ -42,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_gravity="left"
-                tools:text="Valor total: R$ 100,00"
                 android:paddingBottom="5dp"/>
 
 
@@ -52,7 +50,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_gravity="left"
-                tools:text="Status: Em preparação"
                 android:paddingBottom="5dp"/>
 
             <TextView
@@ -61,7 +58,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_gravity="left"
-                tools:text="Entrega: 30min a 40min"
                 android:paddingBottom="5dp"/>
             <TextView
                 android:id="@+id/valorFrete"
@@ -69,7 +65,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_gravity="left"
-                tools:text="Frete: Grátis"
                 android:paddingBottom="5dp"/>
 
             <TextView
@@ -78,7 +73,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_gravity="left"
-                tools:text="Descrição do Pedido"
                 android:paddingBottom="5dp"/>
 
 

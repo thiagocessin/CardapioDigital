@@ -9,13 +9,50 @@
 
     <!-- login -->
     <string name="prompt_name">Nome</string>
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email">E-mail</string>
     <string name="prompt_password">Senha</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_up">Não possui cadastro? Clique aqui</string>
     <string name="action_sign_up_confirm">Cadastrar</string>
 
     <string name="label_restaurantes">Restaurantes</string>
+
+
+    <!--confirmacao do pedido-->
+    <string name="confirmacao_sucesso">Pedido Realizado com sucesso</string>
+    <string name="confirmacao_aguarde">Aguarde que em breve você receberá o seu pedido!</string>
+
+    <!--pedidos-->
+    <string name="pedidos_detalhes">Detalhes do Pedido</string>
+
+    <!--produto cardapio-->
+    <string name="pedidos_finalizar">Finalizar Pedido</string>
+    <string name="menu">Menu</string>
+
+    <!--Restaurantes-->
+    <string name="restaurantes">Restaurantes</string>
+    <string name="nome_restaurante">Jamies Italian</string>
+    <string name="tipo_restaurante">Restaurante Italiano</string>
+
+    <!--Item produto list-->
+    <string name="nome_produto">Nome do Produto</string>
+    <string name="detalhes_produto">Detalhes produto</string>
+    <string name="valor_produto">R$ 10.00</string>
+    <string name="quantidade_produto">Quantidade: </string>
+    <string name="qtd_produto">0</string>
+
+    <!--APP bars-->
+
+
+    <string name="home">Home</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="profile">Profile</string>
+
+    <string name="favorite">Favorite</string>
+    <string name="search">Search</string>
+    <string name="configuracoes">Configurações</string>
+
+
 
 
 </resources>
