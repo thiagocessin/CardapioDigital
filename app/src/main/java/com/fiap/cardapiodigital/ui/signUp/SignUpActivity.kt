@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.fiap.cardapiodigital.R
 import com.fiap.cardapiodigital.databinding.ActivitySignUpBinding
+import com.fiap.cardapiodigital.domain.entities.RestauranteEntity
 import com.fiap.cardapiodigital.ui.produtocardapio.ProdutoCardapioActivity
+import com.fiap.cardapiodigital.ui.restaurantes.RestaurantesActivity
 import com.fiap.cardapiodigital.viewModel.signUp.SignUpContract
 import com.fiap.cardapiodigital.viewModel.signUp.SignUpViewModel
 import com.google.firebase.auth.ktx.auth
@@ -35,6 +37,6 @@ class SignUpActivity : AppCompatActivity(),SignUpContract {
     }
 
     override fun goToMainActivity() {
-        startActivity(Intent(this, ProdutoCardapioActivity::class.java))
+        startActivity(Intent(this, RestaurantesActivity::class.java))
     }
 }

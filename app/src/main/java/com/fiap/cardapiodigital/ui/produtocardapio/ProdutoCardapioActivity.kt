@@ -76,9 +76,6 @@ class ProdutoCardapioActivity : AppCompatActivity(), ProdutoCardapioContract{
 
     }
 
-    override fun goToMainActivity() {
-        TODO("Not yet implemented")
-    }
 
     override fun onSuccesCriarPedido() {
        //Toast.makeText(this, "Pedido Realizado com sucesso", Toast.LENGTH_SHORT).show()
