@@ -33,18 +33,22 @@ Projeto em Kotlin, feito no Android Studio, para acomodar as classes e estrutura
 
 Desenvolvido pelos profissionais:
 
-- [Thiago Aguiar Cessin]()
-- [Leonardo Gusmão dos Santos]()
+- [Thiago Aguiar Cessin](https://www.linkedin.com/in/thiago-cessin-10410a9a)
+- [Leonardo Gusmão dos Santos](https://www.linkedin.com/in/leonardo-gusm%C3%A3o-44b7a9115/)
 - [Rafael Magalhães](https://www.linkedin.com/in/rlmagalhaes/)
 - [Gabriel Leme](https://linkedin.com/in/gabriel-leme-71325b150)
 
 ## 📱 App
 
-![image](https://user-images.githubusercontent.com/60040966/113821616-b5e92500-9752-11eb-95ef-248a9cc0bdce.png)
+
+![image](https://user-images.githubusercontent.com/60040966/113950477-ca2b3180-97e7-11eb-8338-9cc7d78e025d.png)
 
 ![image](https://user-images.githubusercontent.com/60040966/113821106-07dd7b00-9752-11eb-84b9-fc22a68a0cd9.png)
+
 ![image](https://user-images.githubusercontent.com/60040966/113821190-29d6fd80-9752-11eb-932b-f60d79d2cbd6.png)
+
 ![image](https://user-images.githubusercontent.com/60040966/113821175-2479b300-9752-11eb-986e-e385846632af.png)
+
 ![image](https://user-images.githubusercontent.com/60040966/113821300-4b37e980-9752-11eb-9caf-87dd859b4ea3.png)
 
 ![image](https://user-images.githubusercontent.com/60040966/113821662-c8635e80-9752-11eb-8252-59ad47b1d4ac.png)
