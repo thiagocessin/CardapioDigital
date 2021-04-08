@@ -47,11 +47,11 @@ Desenvolvido pelos profissionais:
 
 ![image](https://user-images.githubusercontent.com/60040966/113821190-29d6fd80-9752-11eb-932b-f60d79d2cbd6.png)
 
-![image](https://user-images.githubusercontent.com/60040966/113821175-2479b300-9752-11eb-986e-e385846632af.png)
+![image](https://user-images.githubusercontent.com/60040966/113821662-c8635e80-9752-11eb-8252-59ad47b1d4ac.png)
 
 ![image](https://user-images.githubusercontent.com/60040966/113821300-4b37e980-9752-11eb-9caf-87dd859b4ea3.png)
 
-![image](https://user-images.githubusercontent.com/60040966/113821662-c8635e80-9752-11eb-8252-59ad47b1d4ac.png)
+
 
 
 
